@@ -4,7 +4,7 @@
 <suite name="regress">
     <test name="UI тесты">
         <classes>
-            <class name="ui.Mathematics"/>
+            <class name="ui.login.LoginTests"/>
         </classes>
     </test>
 </suite>
