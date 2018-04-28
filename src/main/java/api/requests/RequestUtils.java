@@ -6,6 +6,9 @@ import com.google.gson.GsonBuilder;
 import io.restassured.RestAssured;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.config.SSLConfig;
+import io.restassured.response.Response;
+import org.json.JSONObject;
+import ru.yandex.qatools.allure.annotations.Attachment;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -41,5 +44,17 @@ public class RequestUtils {
         cfg = RestAssured.config().sslConfig(sslConfig);
     }
 
+    @Attachment(value = "{0}", type = "application/json")
+    public byte[] attachJson(String attachName, String jsonObject) {
+        return jsonObject.getBytes();
+    }
 
+    @Attachment(value = "{0}", type = "text/plain")
+    public String attachText(String attachName, String text) {
+        return text;
+    }
+
+    public String gsonFormatter(Response response) {
+        return gson.toJson(new JSONObject(response.asString()));
+    }
 }

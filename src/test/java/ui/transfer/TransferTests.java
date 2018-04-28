@@ -7,17 +7,16 @@ import ru.yandex.qatools.allure.annotations.Stories;
 import ru.yandex.qatools.allure.annotations.Title;
 import testUser.TestUser;
 
-import java.io.IOException;
-
 @Features("Переводы")
 public class TransferTests extends Base {
 
     @Stories("Critical тесты")
     @Test
     @Title("Перевод между своими продуктами (ГО RUR - Моя копилка RUR)")
-    public void positiveLogin() throws IOException {
+    public void positiveLogin() {
         TestUser testUser = new TestUser("основной");
         LOGIN_PAGE.login(testUser);
-        HEADER_BLOCK.checkLogin();
+        PAYMENTS_WIDGET.checkPaymentWidget();
+        PAYMENTS_WIDGET.selectPaymentCategory("Моя копилка", "\u0584", 100);
     }
 }

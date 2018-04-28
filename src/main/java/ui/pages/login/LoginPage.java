@@ -41,10 +41,6 @@ public class LoginPage {
         }
     }
 
-    public void login(TestUser testUser) {
-        login(testUser.getUsername(), testUser.getPassword());
-    }
-
     @Step("Нажать кнопку \"Войти\"")
     public void pressBtnLogin() {
         try {
@@ -57,12 +53,15 @@ public class LoginPage {
     @Step("Проверить сообщение об ошибке \"Неверная пара логин/пароль\"")
     public void checkErrorMessage() {
         try {
-            Assert.assertEquals(divErrorMessage.waitUntil(Condition.visible, 1000).getText(), "Неверная пара логин/пароль");
+            Assert.assertEquals(divErrorMessage.waitUntil(Condition.visible, 2000).getText(), "Неверная пара логин/пароль");
         } catch (Throwable e) {
             throw new IllegalStateException("Не удалось проверить сообщение об ошибке: " + e);
         }
     }
 
+    public void login(TestUser testUser) {
+        login(testUser.getUsername(), testUser.getPassword());
+    }
 
     @Step("Логинимься пользователем: {0}")
     private void login(String username, String password) {
