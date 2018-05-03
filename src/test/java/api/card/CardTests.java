@@ -9,7 +9,7 @@ import ru.yandex.qatools.allure.annotations.Stories;
 import ru.yandex.qatools.allure.annotations.Title;
 import testUser.TestUser;
 
-@Features("Пояс карты")
+@Features("Карты")
 public class CardTests extends Authorization {
 
     @Stories("Smoke тесты")

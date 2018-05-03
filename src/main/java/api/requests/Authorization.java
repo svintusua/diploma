@@ -22,11 +22,14 @@ public class Authorization extends Base {
         login(testUser.getUsername(), testUser.getPassword());
     }
 
+
+    //Метод для авторизации пользователем
     @Step("Авторизация пользователем: {0}")
     public void login(String user, String password) {
         Response response = POST_REQUEST.postRequestForAuthorization(GeneralPaths.ACCESS_TOKEN, new AccessToken().toString());
         Map<String, String> cookies = new HashMap<>(response.cookies());
-        response = POST_REQUEST.postRequestForAuthorization(GeneralPaths.ACCESS_TOKEN, new AccessTokenNext(response.path("execution"), password, user).toString(), cookies);
+        response = POST_REQUEST.postRequestForAuthorization(GeneralPaths.ACCESS_TOKEN, new AccessTokenNext
+                (response.path("execution"), password, user).toString(), cookies);
         Assert.assertNotNull(response.path("access_token"), "Не удалось авторизоваться!");
         logger.info("accessToken ПОЛУЧЕН");
         RequestUtils.cookieMap.put("at", response.path("access_token"));

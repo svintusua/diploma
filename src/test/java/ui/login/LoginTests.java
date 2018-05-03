@@ -12,7 +12,7 @@ public class LoginTests extends Base {
 
     @Stories("Smoke тесты")
     @Test
-    @Title("Успешная авторизация в интернет банке")
+    @Title("Авторизация в интернет банке (Позитивный тест)")
     public void positiveLogin() {
         TestUser testUser = new TestUser("основной");
         LOGIN_PAGE.login(testUser);
@@ -21,7 +21,7 @@ public class LoginTests extends Base {
 
     @Stories("Smoke тесты")
     @Test
-    @Title("Авторизация в интернет банке (Негативная)")
+    @Title("Авторизация в интернет банке (Негативный тест)")
     public void negativeLogin() {
         TestUser testUser = new TestUser("неправильный");
         LOGIN_PAGE.login(testUser);

@@ -19,14 +19,15 @@ import testUser.TestUser;
 
 import java.math.BigDecimal;
 
-@Features("Пояс Переводы")
+
+@Features("Переводы")//аннотация для отчета
 public class TransferTests extends Authorization {
 
-    @Stories("Critical тесты")
+    @Stories("Critical тесты")//аннотация для отчета
     @Test
-    @Title("Перевод между своими продуктами (Моя копилка RUR - ГО RUR )")
+    @Title("Перевод между своими продуктами (Моя копилка RUR - ГО RUR )")//аннотация для отчета
     public void transferBetweenMy() {
-        BigDecimal amount = new BigDecimal(0.01);
+        BigDecimal amount = new BigDecimal(1);
         TestUser testUser = new TestUser("основной");
         login(testUser);
         CardDTO cards = GET_REQUEST.getRequest(CardPaths.CARD).as(CardDTO.class);
@@ -39,6 +40,4 @@ public class TransferTests extends Authorization {
                         amount, accumulationData.getBalance().getCurrency(), accumulationData.getAccNum())).as(TransferInfoDTO.class);
         INTERNAL_STEPS.checkTransferInfo(transferInfo);
     }
-
-
 }

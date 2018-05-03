@@ -4,6 +4,13 @@
 <suite name="regress">
     <test name="API тесты">
         <classes>
+            <class name="api.login.LoginTests"/>
+            <class name="api.card.CardTests"/>
+            <class name="api.transfer.TransferTests"/>
+        </classes>
+    </test>
+    <test name="UI тесты">
+        <classes>
             <class name="ui.login.LoginTests"/>
             <class name="ui.templates.TemplatesTests"/>
         </classes>

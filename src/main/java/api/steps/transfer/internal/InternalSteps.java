@@ -13,8 +13,10 @@ public class InternalSteps {
     @Step("Проверка TransferInfoDTO на обязательные поля и возможность повторения")
     public void checkTransferInfo(TransferInfoDTO transferInfo) {
         Assert.assertNotNull(transferInfo.getData().getIdDigital(), "Отсутствует idDigital");
-        Assert.assertEquals(transferInfo.getData().getReceiptable(), true, "Отсутсвует возможность повторения операции");
-        Assert.assertEquals(transferInfo.getData().getTemplatable(), true, "Отсутсвует возможность создания шаблона операции");
+        Assert.assertEquals(transferInfo.getData().getReceiptable(), true,
+                "Отсутсвует возможность повторения операции");
+        Assert.assertEquals(transferInfo.getData().getTemplatable(), true,
+                "Отсутсвует возможность создания шаблона операции");
         logger.info("Проверка TransferInfoDTO прошла успешно");
     }
 }

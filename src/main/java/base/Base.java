@@ -13,7 +13,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import testConfig.TestConfig;
 import testListeners.TestListeners;
-import ui.pages.belts.payments.TransferWidget;
+import ui.pages.belts.templates.TemplateWidget;
+import ui.pages.belts.transfer.TransferWidget;
 import ui.pages.header.HeaderBlock;
 import ui.pages.login.LoginPage;
 import ui.utils.Screenshot;
@@ -36,7 +37,8 @@ public class Base {
     protected final CardSteps CARD_STEPS = new CardSteps();
     protected final AccumulationSteps ACCUMULATION_STEPS = new AccumulationSteps();
     protected final InternalSteps INTERNAL_STEPS = new InternalSteps();
-    protected final TransferWidget PAYMENTS_WIDGET = new TransferWidget();
+    protected final TemplateWidget TEMPLATE_WIDGET = new TemplateWidget();
+    protected final TransferWidget TRANSFER_WIDGET = new TransferWidget();
 
 
     @BeforeSuite
