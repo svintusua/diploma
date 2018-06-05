@@ -1,4 +1,4 @@
-package ui.pages.belts.templates;
+package ui.pages.transfers;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$$;
 public class TemplateWidget {
 
     private SelenideElement divTemplateWidget = $(By.xpath("//div[contains(@class, 'wocb-wrapper-section wocb-grid wocb-grid-middle wocb-grid-wide')]/div[contains(@class, 'wocb-header__templates')]"));
-    private SelenideElement divMore = $(By.xpath("//div[contains(@class, 'wocb-more-link')]"));
+    private SelenideElement divMore = $(By.xpath("//a[contains(@class, 'wocb-more-link')]"));
     private ElementsCollection divTemplateList = $$(By.xpath("//div[contains(@class, 'wocb-shortcut wocb-shortcut_template')]/div[contains(@class, 'wocb-shortcut__container')]"));
 
 

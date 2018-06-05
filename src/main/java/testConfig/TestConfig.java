@@ -11,10 +11,14 @@ public class TestConfig {
     private String url;
     private String driver;
 
-    public TestConfig() throws IOException {
+    public TestConfig() {
         String configurationPath = new File("").getAbsolutePath() + "\\src\\main\\resources\\testConfig.properties";
         Properties configuration = new Properties();
-        configuration.load(new FileInputStream(configurationPath));
+        try {
+            configuration.load(new FileInputStream(configurationPath));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         this.url = configuration.getProperty("url");
         this.browser = configuration.getProperty("browser");
         this.driver = configuration.getProperty("driver");

@@ -13,9 +13,11 @@ public class TemplatesTests extends Base {
     @Stories("Critical тесты")
     @Test
     @Title("Применение шаблона по переводу между своими продуктами")
-    public void transfer() {
+    public void templateTest() {
         TestUser testUser = new TestUser("основной");
         LOGIN_PAGE.login(testUser);
+        HEADER_BLOCK.checkLogin();
+        HEADER_BLOCK.clickTransfers();
         TEMPLATE_WIDGET.checkTemplateWidget();
         TEMPLATE_WIDGET.clickDivMore();
         TEMPLATE_WIDGET.findTemplate("Между своими");

@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class HeaderBlock {
 
     private SelenideElement divHeaderInner = $(By.xpath("//div[contains(@class, 'wocb-sticky-header__inner-container')]/div[contains(@class, 'wocb-sticky-header__inner')]"));
+    private SelenideElement aTransfersHeaderInner = $(By.xpath("//a[contains(@class, 'wocb-menu__link wocb-menu__link_active')]"));
 
     @Step("Проверить, что произведен успешный вход в интернет банк")
     public void checkLogin() {
@@ -17,6 +18,15 @@ public class HeaderBlock {
             divHeaderInner.shouldBe(Condition.visible);
         } catch (Throwable e) {
             throw new IllegalStateException("Вход в интернет банк не выполнен: " + e);
+        }
+    }
+
+    @Step("Нажать на кнопку \"Переводы\"")
+    public void clickTransfers() {
+        try {
+            aTransfersHeaderInner.shouldBe(Condition.visible).click();
+        } catch (Throwable e) {
+            throw new IllegalStateException("Не удалось нажать на кнопку \"Переводы\": " + e);
         }
     }
 }

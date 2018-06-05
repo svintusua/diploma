@@ -27,6 +27,4 @@ public class LoginTests extends Base {
         LOGIN_PAGE.login(testUser);
         LOGIN_PAGE.checkErrorMessage();
     }
-
-
 }

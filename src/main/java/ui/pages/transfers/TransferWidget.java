@@ -1,4 +1,4 @@
-package ui.pages.belts.transfer;
+package ui.pages.transfers;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;

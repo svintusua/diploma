@@ -13,13 +13,12 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import testConfig.TestConfig;
 import testListeners.TestListeners;
-import ui.pages.belts.templates.TemplateWidget;
-import ui.pages.belts.transfer.TransferWidget;
 import ui.pages.header.HeaderBlock;
 import ui.pages.login.LoginPage;
+import ui.pages.transfers.TemplateWidget;
+import ui.pages.transfers.TransferWidget;
 import ui.utils.Screenshot;
 
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.logging.Logger;
 
@@ -27,9 +26,7 @@ import java.util.logging.Logger;
 public class Base {
 
     public static final Logger LOGGER = Logger.getLogger("TEST LOGGER");
-    public Screenshot screenshot = new Screenshot();
     public static String url;
-
     protected final LoginPage LOGIN_PAGE = new LoginPage();
     protected final HeaderBlock HEADER_BLOCK = new HeaderBlock();
     protected final GetRequests GET_REQUEST = new GetRequests();
@@ -39,10 +36,10 @@ public class Base {
     protected final InternalSteps INTERNAL_STEPS = new InternalSteps();
     protected final TemplateWidget TEMPLATE_WIDGET = new TemplateWidget();
     protected final TransferWidget TRANSFER_WIDGET = new TransferWidget();
-
+    public Screenshot screenshot = new Screenshot();
 
     @BeforeSuite
-    public void setConfiguration() throws IOException {
+    public void setConfiguration() {
         TestConfig testConfiguration = new TestConfig();
         url = testConfiguration.getUrl();
         Configuration.browser = testConfiguration.getBrowser();
