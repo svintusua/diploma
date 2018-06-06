@@ -19,8 +19,10 @@ public class TransferWidget {
     public void clickBtnTransfer() {
         try {
             divInput.shouldBe(Condition.not(Condition.empty));
-            btnTransfer.click();
-            btnTransfer.click();
+            wait(2000);
+            btnTransfer.shouldBe(Condition.visible).click();
+            wait(2000);
+            btnTransfer.shouldBe(Condition.visible).click();
         } catch (Throwable e) {
             throw new IllegalStateException("Не удалось нажать на кнопку \"Перевести\" и кноку \"Подтвердить\": " + e);
         }
@@ -33,6 +35,14 @@ public class TransferWidget {
             Assert.assertTrue(check, "Сообщение не соответсвует условию");
         } catch (Throwable e) {
             throw new IllegalStateException("Не удалось проверить сообщение \"Перевод выполнен успешно\": " + e);
+        }
+    }
+
+    public void wait(int time) {
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

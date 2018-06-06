@@ -1,7 +1,9 @@
 
 package api.dto.response.tansfer.internal;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TransferInfoDTO {
 
     private Boolean success;

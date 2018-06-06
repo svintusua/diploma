@@ -2,8 +2,11 @@
 package api.dto.response.product.card;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.math.BigDecimal;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Balance {
 
     private BigDecimal amount;

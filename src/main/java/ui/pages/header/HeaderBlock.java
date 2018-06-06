@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class HeaderBlock {
 
     private SelenideElement divHeaderInner = $(By.xpath("//div[contains(@class, 'wocb-sticky-header__inner-container')]/div[contains(@class, 'wocb-sticky-header__inner')]"));
-    private SelenideElement aTransfersHeaderInner = $(By.xpath("//a[contains(@class, 'wocb-menu__link wocb-menu__link_active')]"));
+    private SelenideElement aTransfersHeaderInner = $(By.xpath("//ul[contains(@class, 'wocb-menu')]//li[3]/a"));
 
     @Step("Проверить, что произведен успешный вход в интернет банк")
     public void checkLogin() {

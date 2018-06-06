@@ -28,7 +28,7 @@ public class TemplateWidget {
     @Step("Нажатие на кнопку \"...\"")
     public void clickDivMore() {
         try {
-            divMore.click();
+            divMore.shouldBe(Condition.visible).click();
         } catch (Throwable e) {
             throw new IllegalStateException("Не удалось нажать на кнопку \"...\": " + e);
         }
@@ -37,14 +37,24 @@ public class TemplateWidget {
     @Step("Выбрать шаблон с названием {0}")
     public void findTemplate(String name) {
         try {
+            wait(2000);
             for (SelenideElement element : divTemplateList) {
-                if (element.getText().contains(name)) {
-                    element.click();
+                if (element.shouldBe(Condition.visible).getText().contains(name)) {
+                    element.shouldBe(Condition.visible).click();
                     break;
                 }
             }
         } catch (Throwable e) {
             throw new IllegalStateException("Не удалось выбрать шаблон с нужным названием: " + e);
+        }
+    }
+
+
+    public void wait(int time) {
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

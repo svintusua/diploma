@@ -16,7 +16,6 @@ public class TemplatesTests extends Base {
     public void templateTest() {
         TestUser testUser = new TestUser("основной");
         LOGIN_PAGE.login(testUser);
-        HEADER_BLOCK.checkLogin();
         HEADER_BLOCK.clickTransfers();
         TEMPLATE_WIDGET.checkTemplateWidget();
         TEMPLATE_WIDGET.clickDivMore();
