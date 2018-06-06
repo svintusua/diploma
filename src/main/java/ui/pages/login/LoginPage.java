@@ -4,9 +4,9 @@ import base.Base;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import ru.yandex.qatools.allure.annotations.Step;
 import testUser.TestUser;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -18,7 +18,7 @@ public class LoginPage {
     private SelenideElement btnLogin = $(By.xpath("//*[@id=\"login-standart\"]/form/div[5]/div[1]/button"));
     private SelenideElement divErrorMessage = $(By.xpath("//*[@id=\"login-standart\"]/form/div[6]"));
 
-    @Step("Открыть браузер на странице: {0}")
+    @Step("Открыть браузер на странице: {url}")
     public void openHomePage(String url) {
         Selenide.open(url);
     }

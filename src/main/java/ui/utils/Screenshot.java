@@ -1,9 +1,9 @@
 package ui.utils;
 
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Augmenter;
-import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
@@ -34,7 +34,7 @@ public class Screenshot {
 
     }
 
-    @Attachment(value = "{0}", type = "image/png")
+    @Attachment(value = "{name}", type = "image/png")
     public static byte[] saveScreenshot(String name, byte[] screenshot) {
         return screenshot;
     }

@@ -3,18 +3,16 @@ package api.card;
 import api.dto.response.product.card.CardDTO;
 import api.paths.product.CardPaths;
 import api.requests.Authorization;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.Test;
-import ru.yandex.qatools.allure.annotations.Features;
-import ru.yandex.qatools.allure.annotations.Stories;
-import ru.yandex.qatools.allure.annotations.Title;
 import testUser.TestUser;
 
-@Features("Карты")
+@Feature("Карты")
 public class CardTests extends Authorization {
 
-    @Stories("Smoke тесты")
-    @Test
-    @Title("GET //webbank/webapi-2.1//card-webapi/product/card/")
+    @Story("Smoke тесты")
+    @Test(description = "GET //webbank/webapi-2.1//card-webapi/product/card/")
     public void getCards() {
         TestUser testUser = new TestUser("основной");
         login(testUser);

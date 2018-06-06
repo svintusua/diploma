@@ -19,8 +19,7 @@ public class TestListeners implements ITestListener, IInvokedMethodListener {
     public void afterInvocation(IInvokedMethod iInvokedMethod, ITestResult iTestResult) {
         if (iInvokedMethod.isTestMethod()) {
             try {
-                if (hasWebDriverStarted())
-                    takeScreenshotFullPage("Скриншот послднего шага");
+                if (hasWebDriverStarted()) takeScreenshotFullPage("Скриншот послднего шага");
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {

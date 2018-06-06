@@ -1,10 +1,10 @@
 package api.steps.transfer.internal;
 
 import api.dto.response.tansfer.internal.TransferInfoDTO;
+import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import ru.yandex.qatools.allure.annotations.Step;
 
 public class InternalSteps {
 

@@ -1,7 +1,7 @@
 package testUser;
 
+import io.qameta.allure.Step;
 import org.testng.Assert;
-import ru.yandex.qatools.allure.annotations.Step;
 import ui.utils.Utils;
 
 import java.io.BufferedReader;
@@ -22,7 +22,7 @@ public class TestUser {
         readFileSuperUsers(role);
     }
 
-    @Step("Выбрать пользователя c ролью: {0}")
+    @Step("Выбрать пользователя c ролью: {role}")
     public void readFileSuperUsers(String role) {
         String line;
         String[] sSpl;

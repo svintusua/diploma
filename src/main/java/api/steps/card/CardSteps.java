@@ -4,10 +4,10 @@ import api.dto.response.product.card.CardDTO;
 import api.dto.response.product.card.CardData;
 import api.propreties.Properties;
 import api.requests.PostRequests;
+import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import ru.yandex.qatools.allure.annotations.Step;
 import testUser.TestUser;
 
 public class CardSteps {
@@ -18,7 +18,7 @@ public class CardSteps {
         checkCard(card, testUser.getFio());
     }
 
-    @Step("Проверка CardDTO на обязательные поля и принадлженость клиенту: {1}")
+    @Step("Проверка CardDTO на обязательные поля и принадлженость клиенту: {fio}")
     public void checkCard(CardDTO card, String fio) {
         for (CardData cardData : card.getData()) {
             Assert.assertNotNull(cardData.getBankName(), "Отсутсвует BankName");

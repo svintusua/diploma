@@ -3,8 +3,8 @@ package ui.pages.transfers;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
-import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -34,7 +34,7 @@ public class TemplateWidget {
         }
     }
 
-    @Step("Выбрать шаблон с названием {0}")
+    @Step("Выбрать шаблон с названием {name}")
     public void findTemplate(String name) {
         try {
             wait(2000);

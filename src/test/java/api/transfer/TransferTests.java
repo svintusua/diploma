@@ -11,21 +11,19 @@ import api.paths.product.CardPaths;
 import api.paths.transfer.InternalPaths;
 import api.propreties.Properties;
 import api.requests.Authorization;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.Test;
-import ru.yandex.qatools.allure.annotations.Features;
-import ru.yandex.qatools.allure.annotations.Stories;
-import ru.yandex.qatools.allure.annotations.Title;
 import testUser.TestUser;
 
 import java.math.BigDecimal;
 
 
-@Features("Переводы")//аннотация для отчета
+@Feature("Переводы")//аннотация для отчета
 public class TransferTests extends Authorization {
 
-    @Stories("Critical тесты")//аннотация для отчета
-    @Test
-    @Title("Перевод между своими продуктами (Моя копилка RUR - ГО RUR )")//аннотация для отчета
+    @Story("Critical тесты")//аннотация для отчета
+    @Test(description = "Перевод между своими продуктами (Моя копилка RUR - ГО RUR )")//аннотация для отчета
     public void transferBetweenMy() {
         BigDecimal amount = new BigDecimal(1);
         TestUser testUser = new TestUser("основной");

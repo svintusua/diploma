@@ -3,7 +3,7 @@ package api.steps.account.accumulation;
 import api.dto.response.product.account.accumulation.AccumulationDTO;
 import api.dto.response.product.account.accumulation.AccumulationData;
 import api.propreties.Properties;
-import ru.yandex.qatools.allure.annotations.Step;
+import io.qameta.allure.Step;
 
 public class AccumulationSteps {
 
