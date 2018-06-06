@@ -38,7 +38,7 @@ public class Base {
     protected final TransferWidget TRANSFER_WIDGET = new TransferWidget();
     public Screenshot screenshot = new Screenshot();
 
-    @BeforeSuite
+    @BeforeSuite(description = "Установка тестовой конфигурации")
     public void setConfiguration() {
         TestConfig testConfiguration = new TestConfig();
         url = testConfiguration.getUrl();
@@ -48,12 +48,12 @@ public class Base {
         System.setProperty("webdriver.chrome.driver", testConfiguration.getDriver());
     }
 
-    @BeforeMethod
+    @BeforeMethod(description = "Вывод сообщения о начале теста")
     public void initSteps(Method method) {
         LOGGER.info("Test \"" + method.getName() + "\" STARTED");
     }
 
-    @AfterMethod
+    @AfterMethod(description = "Вывод результата теста")
     public void finishSteps(Method method, ITestResult iTestResult) {
         switch (iTestResult.getStatus()) {
             case 1:

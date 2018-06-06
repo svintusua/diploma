@@ -23,7 +23,7 @@ public class LoginPage {
         Selenide.open(url);
     }
 
-    @Step("Ввести \"{0}\" в поле \"Логин\"")
+    @Step("Ввести \"{username}\" в поле \"Логин\"")
     public void inputToFldUsername(String username) {
         try {
             fldUsername.setValue(username);
@@ -63,7 +63,7 @@ public class LoginPage {
         login(testUser.getUsername(), testUser.getPassword());
     }
 
-    @Step("Логинимься пользователем: {0}")
+    @Step("Логинимься пользователем: {username}")
     private void login(String username, String password) {
         openHomePage(Base.url);
         inputToFldUsername(username);

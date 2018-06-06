@@ -42,12 +42,12 @@ public class RequestUtils {
         }
     }
 
-    @Attachment(value = "{0}", type = "application/json")
+    @Attachment(value = "{attachName}", type = "application/json")
     public byte[] attachJson(String attachName, String jsonObject) {
         return jsonObject.getBytes();
     }
 
-    @Attachment(value = "{0}", type = "text/plain")
+    @Attachment(value = "{attachName}", type = "text/plain")
     public String attachText(String attachName, String text) {
         return text;
     }
