@@ -21,15 +21,15 @@ public class CardSteps {
     @Step("Проверка CardDTO на обязательные поля и принадлженость клиенту: {fio}")
     public void checkCard(CardDTO card, String fio) {
         for (CardData cardData : card.getData()) {
-            Assert.assertNotNull(cardData.getBankName(), "Отсутсвует BankName");
-            Assert.assertNotNull(cardData.getBalance(), "Отсутсвует Balance");
-            Assert.assertNotNull(cardData.getBsc(), "Отсутсвует Bsc");
-            Assert.assertNotNull(cardData.getType(), "Отсутсвует Type");
-            Assert.assertNotNull(cardData.getPinChangeAvailable(), "Отсутсвует PinChangeAvailable");
-            Assert.assertNotNull(cardData.getCardId(), "Отсутсвует CardId");
-            Assert.assertNotNull(cardData.getReissueInfo(), "Отсутсвует ReissueInfo");
-            Assert.assertNotNull(cardData.getAccNum(), "Отсутсвует AccNum");
-            Assert.assertNotNull(cardData.getApplePayAllowed(), "Отсутсвует ApplePayAllowed");
+            Assert.assertNotNull(cardData.getBankName(), "Отсутствует BankName");
+            Assert.assertNotNull(cardData.getBalance(), "Отсутствует Balance");
+            Assert.assertNotNull(cardData.getBsc(), "Отсутствует Bsc");
+            Assert.assertNotNull(cardData.getType(), "Отсутствует Type");
+            Assert.assertNotNull(cardData.getPinChangeAvailable(), "Отсутствует PinChangeAvailable");
+            Assert.assertNotNull(cardData.getCardId(), "Отсутствует CardId");
+            Assert.assertNotNull(cardData.getReissueInfo(), "Отсутствует ReissueInfo");
+            Assert.assertNotNull(cardData.getAccNum(), "Отсутствует AccNum");
+            Assert.assertNotNull(cardData.getApplePayAllowed(), "Отсутствует ApplePayAllowed");
             Assert.assertEquals(cardData.getAccName(), fio, "Карта не принадлежит пользователю");
         }
         logger.info("Проверка CardDTO прошла успешно");
